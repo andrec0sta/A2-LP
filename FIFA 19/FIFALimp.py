@@ -5,6 +5,9 @@ Created on Tue Dec  8 11:00:54 2020
 @author: André
 """
 
+import FIFAConn
+
+df = FIFAConn.readFIFA()
 
 def f(x):
     '''
@@ -27,9 +30,7 @@ def f(x):
     elif unit == 'K':
         return float(x)*1
 
-def limpeza():
-    import FIFAConn
-    df = FIFAConn.readFIFA()
+def limpeza(df):
     '''
     Limpa e organiza a base de dados para facilitar a modelagem estatistíca dela
     A descrição das mudanças feitas pode ser encontrada no relatório
@@ -68,5 +69,5 @@ def limpeza():
     df['PosicionamentoCampo'] = df['PosicionamentoCampo'].replace(["CF","LF","RF","ST","LS","RS"],"ATQ")
     return df
 
-limpeza()
-print(limpeza())
+# limpeza(df)
+# print(limpeza(df))
